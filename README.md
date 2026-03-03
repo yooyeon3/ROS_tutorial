@@ -183,3 +183,47 @@ $ rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[0.0, 0.0, 0.0]' '[0.
 ---
 
 
+# 과제 5: turtlesim 2개 동시 실행
+
+- 같은 노드를 다른 이름으로 2개 실행하고, 하나만 조작해 보기
+
+### 터미널 1 — roscore (이미 실행 중이면 생략)
+```bash
+$ roscore
+```
+### 터미널 2 — 첫 번째 turtlesim (기본 이름: /turtlesim)
+```bash
+$ rosrun turtlesim turtlesim_node
+```
+### 터미널 3 — 두 번째 turtlesim (이름을 /my_turtle로 변경)
+```bash
+$ rosrun turtlesim turtlesim_node __name:=my_turtle
+```
+# 터미널 4 — 노드 목록 확인
+```bash
+$ rosnode list
+```
+------------------------------------
+결과값
+------------------------------------
+
+/rosout
+
+/turtlesim
+
+/my_turtle
+
+
+---
+
+### 터미널 4 — teleop_key로 조작
+---
+```bash
+$ rosrun turtlesim turtle_teleop_key
+```
+
+관찰 포인트: 방향키를 누르면 두 거북이가 동시에 움직이는지, 하나만 움직이는지 확인해 보세요. 왜 그런지 rostopic info /turtle1/cmd_vel로 구독자를 확인해 보세요.
+
+### 결과 이미지
+![과제5: 결과](./images/과제5.png)
+- 다음과 같이 두개 모두 한번에 움직이게 된다.
