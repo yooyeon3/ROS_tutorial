@@ -160,3 +160,28 @@ angular.z → 회전
 ---
 # 과제 4:  rostopic pub으로 정사각형 그리기
 
+명령줄에서 직접 메시지를 보내 거북이를 정사각형 경로로 이동시키기
+
+---
+# 1. turtlesim 실행
+- (roscore, turtlesim_node가 이미 실행 중이어야 함)
+# 2. 직진 (2초간 전진)
+```bash
+$ rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 0.0]'
+```
+
+# 3. 90도 회전 (angular.z = 1.5708은 약 π/2 라디안)
+
+```bash
+$ rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[0.0, 0.0, 0.0]' '[0.0, 0.0, 1.5708]'
+```
+
+# 4. 위 2~3을 4번 반복하면 정사각형이 완성됩니다
+
+💡 정확한 정사각형이 안 될 수 있습니다. -1 
+
+# [5.실행 결과]
+![과제 이미지](./images/과제4.png)
+--
+
+
