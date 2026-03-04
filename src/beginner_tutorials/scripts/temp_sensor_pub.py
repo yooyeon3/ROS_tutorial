@@ -1,3 +1,4 @@
+# 온도 조정 + 온도 수신
 #!/usr/bin/env python3
 import rospy
 import random

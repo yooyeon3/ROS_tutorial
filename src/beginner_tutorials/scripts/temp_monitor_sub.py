@@ -1,3 +1,4 @@
+# 온도 조정 
 #!/usr/bin/env python3
 import rospy
 from std_msgs.msg import Float32
@@ -17,3 +18,5 @@ def temp_subscriber():
 
 if __name__ == '__main__':
     temp_subscriber()
+
+
