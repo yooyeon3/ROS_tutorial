@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/yooyeon/catkin_ws/devel/setup.sh
