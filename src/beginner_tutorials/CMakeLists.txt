@@ -23,7 +23,7 @@ include_directories(
 )
 
 # beginner_tutorials/CMakeLists.txt 파일 하단에 추가
-catkin_install_python(PROGRAMSs
+catkin_install_python(PROGRAMS
   scripts/temp_sensor_pub.py
   scripts/temp_monitor_sub.py
   scripts/add_two_ints_server.py
