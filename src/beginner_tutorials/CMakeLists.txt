@@ -4,7 +4,7 @@ project(beginner_tutorials)
 ## C++ 11 표준 사용
 add_compile_options(-std=c++11)
 
-## 의존 패키지 검색
+## 의존 패키지 검색 (message_generation이 반드시 포함되어야 합니다)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
@@ -12,7 +12,19 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
 )
 
-## 패키지 구성 설정
+## 서비스 파일 등록 (이 부분이 빠져서 모듈을 찾지 못한 것입니다)
+add_service_files(
+  FILES
+  AddTwoInts.srv
+)
+
+## 메시지 및 서비스 생성 호출
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+
+## 패키지 구성 설정 (message_runtime이 포함되어야 합니다)
 catkin_package(
   CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
 )
@@ -22,7 +34,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-# beginner_tutorials/CMakeLists.txt 파일 하단에 추가
+## 파이썬 스크립트 설치 설정 (오타 PROGRAMS 수정 완료)
 catkin_install_python(PROGRAMS
   scripts/temp_sensor_pub.py
   scripts/temp_monitor_sub.py
@@ -30,7 +42,3 @@ catkin_install_python(PROGRAMS
   scripts/add_two_ints_client.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-
-## 실행 파일 설정 예시 (필요 시 주석 해제 후 파일명 수정)
-# add_executable(${PROJECT_NAME}_node src/beginner_tutorials_node.cpp)
-# target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES})
