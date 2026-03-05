@@ -4,4 +4,4 @@
 ![rosbag record 중 거북이 경로](screenshots/rosbag_record.png)
 
 ## rosbag play
-![rosbag play 재생 결과](screenshots/rosbag_play.png
+![rosbag play 재생 결과](screenshots/rosbag_play.png)
