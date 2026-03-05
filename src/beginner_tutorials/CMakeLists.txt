@@ -41,5 +41,6 @@ catkin_install_python(PROGRAMS
   scripts/temp_monitor_sub.py
   scripts/add_two_ints_server.py
   scripts/add_two_ints_client.py
+  scripts/calc_server.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
