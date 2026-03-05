@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
   FILES
   AddTwoInts.srv
+  StringLength.srv
 )
 
 ## 메시지 및 서비스 생성 호출
