@@ -10,6 +10,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  actionlib
+  actionlib_msgs
 )
 
 ## 서비스 파일 등록 (이 부분이 빠져서 모듈을 찾지 못한 것입니다)
@@ -19,15 +21,22 @@ add_service_files(
   StringLength.srv
 )
 
+add_action_files(
+  FILES
+  Timer.action
+)
+
 ## 메시지 및 서비스 생성 호출
 generate_messages(
   DEPENDENCIES
   std_msgs
+  actionl
 )
 
 ## 패키지 구성 설정 (message_runtime이 포함되어야 합니다)
 catkin_package(
   CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
+  CATKIN_DEPENDS actionlib_msgs
 )
 
 ## 인클루드 경로 설정
