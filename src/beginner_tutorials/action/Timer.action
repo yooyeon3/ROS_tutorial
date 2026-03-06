@@ -1,0 +1,10 @@
+# Goal (요청)
+duration duration
+---
+# Result (결과)
+duration time_elapsed
+uint32 updates_sent
+---
+# Feedback (피드백)
+duration time_elapsed
+duration time_remaining
