@@ -1,10 +1,10 @@
-# Goal (요청)
-duration duration
+# Goal
+int32 target_seconds
 ---
-# Result (결과)
-duration time_elapsed
-uint32 updates_sent
+# Result
+bool success
+int32 elapsed_seconds
 ---
-# Feedback (피드백)
-duration time_elapsed
-duration time_remaining
+# Feedback
+int32 current_seconds
+float32 progress_percent

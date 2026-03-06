@@ -30,7 +30,7 @@ add_action_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
-  actionl
+  actionlib_msgs
 )
 
 ## 패키지 구성 설정 (message_runtime이 포함되어야 합니다)
@@ -51,5 +51,7 @@ catkin_install_python(PROGRAMS
   scripts/add_two_ints_server.py
   scripts/add_two_ints_client.py
   scripts/calc_server.py
+  scripts/timer_server.py
+  scripts/timer_client.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
