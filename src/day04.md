@@ -117,6 +117,21 @@ chmod +x ~/catkin_ws/src/beginner_tutorials/scripts/timer_client.py
 
 비동기 통신 확인: 요청을 보낸 클라이언트가 아닌 제3의 터미널에서도 작업을 제어할 수 있는 ROS 액션의 특징을 테스트합니다.
 
+# 실행방법
+터미널1
+```bash
+roscore 실행
+```
+터미널2
+```bash
+rosrun beginner_tutorials timer_server.py
+```
+터미널3
+```bash
+rosrun beginner_tutorials timer_client.py 100
+```
+100초동안 실행
+---
 ### 6-1. 취소용 메시지 타입 확인
 
 ```Bash
@@ -129,4 +144,6 @@ rostopic pub /timer/cancel actionlib_msgs/GoalID -- {}
 ```
 
 결과 확인: 명령어가 입력되는 즉시 서버 터미널에 "타이머 취소됨!" 로그가 출력되며 작업이 안전하게 중단되는지 확인합니다.
+---
 (Ctrl+C 버튼을 눌러도 안되지만, 실제 로봇은 외부에서 제어하는게 많으므로 상관X)
+
